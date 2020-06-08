@@ -9,8 +9,15 @@
           <div fxLayout="column" fxLayoutAlign="center center">
             <div class="product">{{item.title}}</div>
             <div class="product"><img src="{{item.cover}}" alt="cover"></div>
-            <div class="product">{{item.price + ' '}} {{item.currency}}</div> <!--TODO: if null to brak-->
-            <button mat-raised-button [disabled]="!item.availability">Add to cart</button>
+            <div class="product">{{item.price == null ? 'None' : item.price + ' ' + item.currency}}</div>
+            <div matTooltip="Temporarily not available"
+                 matTooltipPosition="below"
+                 [matTooltipDisabled]="item.availability">
+              <button mat-raised-button
+                      (click)="addToCart(item.id)"
+                      [disabled]="!item.availability">Add to cart
+              </button>
+            </div>
           </div>
         </mat-grid-tile>
       </div>
