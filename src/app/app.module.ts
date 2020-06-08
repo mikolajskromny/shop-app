@@ -12,9 +12,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {ProductListService} from './services/product-list.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {DataShareService} from './services/data-share.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
-// noinspection AngularInvalidImportedOrDeclaredSymbol
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +32,20 @@ import {MatButtonModule} from '@angular/material/button';
     FlexLayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatListModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
+  ],
+  exports: [
+    MatListModule,
     MatGridListModule,
     MatButtonModule
   ],
   providers: [
-    ProductListService
+    ProductListService,
+    DataShareService
   ],
   bootstrap: [AppComponent]
 })

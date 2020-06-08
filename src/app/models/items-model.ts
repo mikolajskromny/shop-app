@@ -5,4 +5,6 @@ export interface ItemsModel {
   availability: boolean;
   price: number;
   currency: string;
+  quantity?: number;
+  total?: number;
 }
