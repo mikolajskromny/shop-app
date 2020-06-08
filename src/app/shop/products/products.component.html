@@ -1,0 +1,19 @@
+<div fxLayout="column">
+  <div class="product" fxFlex="15">
+    <h1>Products</h1>
+  </div>
+  <div fxFlex>
+    <mat-grid-list cols="3" rowHeight="1:1">
+      <div *ngFor="let item of itemList">
+        <mat-grid-tile>
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <div class="product">{{item.title}}</div>
+            <div class="product"><img src="{{item.cover}}" alt="cover"></div>
+            <div class="product">{{item.price + ' '}} {{item.currency}}</div> <!--TODO: if null to brak-->
+            <button mat-raised-button [disabled]="!item.availability">Add to cart</button>
+          </div>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+  </div>
+</div>
